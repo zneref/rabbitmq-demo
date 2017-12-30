@@ -9,7 +9,7 @@ public class RMQReceiver implements Receiver {
 
     public RMQReceiver(Sender sender, Channel channel) {
         this.channel = channel;
-        sender.addReceiver(this);
+        sender.setReceiver(this);
 
     }
 
@@ -23,9 +23,10 @@ public class RMQReceiver implements Receiver {
             }
         };
         try {
-            channel.basicConsume(Queue.NAME, false, consumer);
+            channel.basicConsume(Queue.NAME, true, consumer);
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 }

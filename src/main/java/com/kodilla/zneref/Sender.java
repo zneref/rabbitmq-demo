@@ -1,9 +1,9 @@
 package com.kodilla.zneref;
 
 public interface Sender {
-    void addReceiver(Receiver receiver);
+    void setReceiver(Receiver receiver);
 
-    void notifyReceivers();
+    void notifyReceiver();
 
     void sendMessage(String message);
 }

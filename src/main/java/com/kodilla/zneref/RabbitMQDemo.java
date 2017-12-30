@@ -1,7 +1,7 @@
 /*
-* This app demonstrates simple implementation of RabbitMQ messaging broker
-* @author Marian Ferenz
-* */
+ * Simple implementation using RabbitMQ messaging broker
+ * @author Marian Ferenz
+ * */
 package com.kodilla.zneref;
 
 import com.rabbitmq.client.Channel;
@@ -19,9 +19,14 @@ public class RabbitMQDemo {
         channel.queueDeclare(Queue.NAME, false, false, false, null);
         Sender sender = new RMQSender(channel);
         new RMQReceiver(sender, channel);
-        new RMQReceiver(sender, channel);
-        sender.sendMessage("Hello world!");
-
+        for (int i = 0; i < 10; i++) {
+            sender.sendMessage("message no: " + Integer.toString(i));
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
         channel.close();
         connection.close();
     }

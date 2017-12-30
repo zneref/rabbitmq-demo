@@ -3,26 +3,22 @@ package com.kodilla.zneref;
 import com.rabbitmq.client.Channel;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class RMQSender implements Sender {
     private String message;
-    private List<Receiver> receivers = new ArrayList<Receiver>();
+    private Receiver receiver;
     private Channel channel;
 
     public RMQSender(Channel channel) {
         this.channel = channel;
     }
 
-    public void addReceiver(Receiver receiver) {
-        receivers.add(receiver);
+    public void setReceiver(Receiver receiver) {
+        this.receiver = receiver;
     }
 
-    public void notifyReceivers() {
-        for (Receiver receiver : receivers) {
-            receiver.receive(message);
-        }
+    public void notifyReceiver() {
+        receiver.receive(message);
     }
 
     public void sendMessage(String message) {
@@ -33,6 +29,6 @@ public class RMQSender implements Sender {
             e.printStackTrace();
         }
         System.out.println(" [x] Sent '" + message + "'");
-        notifyReceivers();
+        notifyReceiver();
     }
 }

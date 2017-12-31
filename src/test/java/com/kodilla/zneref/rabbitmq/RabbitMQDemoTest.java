@@ -1,4 +1,4 @@
-package com.kodilla.zneref;
+package com.kodilla.zneref.rabbitmq;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

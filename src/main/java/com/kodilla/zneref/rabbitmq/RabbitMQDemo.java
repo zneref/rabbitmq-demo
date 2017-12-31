@@ -2,8 +2,12 @@
  * Simple implementation using RabbitMQ messaging broker
  * @author Marian Ferenz
  * */
-package com.kodilla.zneref;
+package com.kodilla.zneref.rabbitmq;
 
+import com.kodilla.zneref.rabbitmq.labels.Queue;
+import com.kodilla.zneref.rabbitmq.sender.Sender;
+import com.kodilla.zneref.rabbitmq.receiver.RMQReceiver;
+import com.kodilla.zneref.rabbitmq.sender.RMQSender;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.ConnectionFactory;

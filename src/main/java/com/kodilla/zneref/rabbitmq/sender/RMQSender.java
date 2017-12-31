@@ -1,5 +1,7 @@
-package com.kodilla.zneref;
+package com.kodilla.zneref.rabbitmq.sender;
 
+import com.kodilla.zneref.rabbitmq.labels.Queue;
+import com.kodilla.zneref.rabbitmq.receiver.Receiver;
 import com.rabbitmq.client.Channel;
 
 import java.io.IOException;

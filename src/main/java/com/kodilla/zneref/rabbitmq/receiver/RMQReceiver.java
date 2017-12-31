@@ -1,6 +1,6 @@
 package com.kodilla.zneref.rabbitmq.receiver;
 
-import com.kodilla.zneref.rabbitmq.labels.Queue;
+import com.kodilla.zneref.rabbitmq.model.Queue;
 import com.kodilla.zneref.rabbitmq.sender.Sender;
 import com.rabbitmq.client.*;
 

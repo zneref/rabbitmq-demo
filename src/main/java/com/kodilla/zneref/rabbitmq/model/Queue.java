@@ -1,4 +1,4 @@
-package com.kodilla.zneref.rabbitmq.labels;
+package com.kodilla.zneref.rabbitmq.model;
 
 public class Queue {
     public static final String NAME = "queue";
